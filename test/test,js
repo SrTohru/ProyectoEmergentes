@@ -1,4 +1,4 @@
-const Bundle = require('./bundle.js');
+const Bundle = require('./Entities/bundle.js');
 (async () => {
     try {
         console.log("creacion");

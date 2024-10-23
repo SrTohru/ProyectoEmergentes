@@ -1,6 +1,6 @@
 const pool = require('../Database/db');
 
-class Bundle {
+class bundle {
     constructor(id = null, name, price) {
         this.id = id;
         this.name = name;
@@ -17,7 +17,7 @@ class Bundle {
         const [rows] = await pool.query('SELECT * FROM bundle WHERE id = ?', [id]);
         if (rows.length > 0) {
             const { id, name, price } = rows[0];
-            return new Bundle(id, name, price);
+            return new bundle(id, name, price);
         }
         return null;
     }
@@ -35,8 +35,8 @@ class Bundle {
 
     static async findAll() {
         const [rows] = await pool.query('SELECT * FROM bundle');
-        return rows.map(row => new Bundle(row.id, row.name, row.price));
+        return rows.map(row => new bundle(row.id, row.name, row.price));
     }
 }
 
-module.exports = Bundle;
+module.exports = bundle;
