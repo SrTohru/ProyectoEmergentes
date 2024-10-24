@@ -18,6 +18,9 @@ app.use('/api',clientRoutes);
 const bundleItemRoutes = require('./itembundle/itembundle.module.js');
 app.use('/api', bundleItemRoutes);
 
+const itemRoutes = require('./item/item.module.js');
+app.use('/api',itemRoutes);
+
 const port = 3000//process.env.PORT;
 app.listen(port, () => {
   console.log(`Servidor en ejecución en el puerto ${port}`);
