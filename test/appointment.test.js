@@ -1,4 +1,4 @@
-const Appointment = require('./Entities/appointment');
+const Appointment = require('../Entities/appointment');
 
 
 async function runTests() {

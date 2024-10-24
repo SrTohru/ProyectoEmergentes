@@ -1,6 +1,8 @@
 class BundleItem {
-    constructor(amount) {
-        this.amount = amount;
+    constructor(id =null, bundleID, itemID) {
+        this.id=id;
+        this.bundleID = bundleID;
+        this.itemID = itemID;
     }
 }
 export default BundleItem;
