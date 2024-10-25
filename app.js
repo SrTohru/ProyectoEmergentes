@@ -1,27 +1,21 @@
 const express = require('express');
 const app = express();
 
-// Cargar variables de entorno desde el archivo .env
-const dotenv = require('dotenv');
-dotenv.config();
+// Importar rutas
+const appointmentRoutes = require('./appointment/appointment.routes');
+const bundleRoutes = require('./bundle/bundle.routes');
+const bundleItemRoutes = require('./bundleitem/bundleitem.routes');
+const clientRoutes = require('./client/client.routes');
+const contractRoutes = require('./contract/contract.routes');
+const itemRoutes = require('./item/item.routes');
+const itemBundleRoutes = require('./itembundle/itembundle.routes');
 
-// Middleware para analizar JSON
-app.use(express.json());
+// Usar rutas
+app.use('/api/appointments', appointmentRoutes);
+app.use('/api/bundles', bundleRoutes);
+app.use('/api/bundleitems', bundleItemRoutes);
+app.use('/api/clients', clientRoutes);
+app.use('/api/contracts', contractRoutes);
+app.use('/api/items', itemRoutes);
+app.use('/api/itembundles', itemBundleRoutes);
 
-
-const bundleRoutes = require('./bundle/bundle.module.js');
-app.use('/api',bundleRoutes);
-
-const clientRoutes = require('./client/client.module.js');
-app.use('/api',clientRoutes);
-
-const bundleItemRoutes = require('./itembundle/itembundle.module.js');
-app.use('/api', bundleItemRoutes);
-
-const itemRoutes = require('./item/item.module.js');
-app.use('/api',itemRoutes);
-
-const port = 3000//process.env.PORT;
-app.listen(port, () => {
-  console.log(`Servidor en ejecución en el puerto ${port}`);
-});

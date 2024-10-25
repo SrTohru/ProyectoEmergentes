@@ -1,5 +1,5 @@
-const pool = require('../Database/db');
-const bundle = require('../Entities/bundle');
+const pool = require('../../Database/db');
+const bundle = require('../Domain/bundle');
 
 class BundleService{
 

@@ -1,5 +1,5 @@
-const pool = require('../Database/db');
-const client = require('../Entities/client');
+const pool = require('../../Database/db');
+const client = require('../Domain/client/');
 
 class ClientService {
 
